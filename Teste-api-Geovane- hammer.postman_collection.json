@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "dc784753-07ba-4cab-a4f4-0c5146f4131b",
+		"name": "Teste-api-Geovane- hammer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"geovane@gmail.com\",\r\n  \"senha\": \"@Teste123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Funcionario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"teste\",\r\n  \"email\": \"teste@gmail.com\",\r\n  \"cargo\": \"Dev .Net\",\r\n  \"setor\": \"TI\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/funcionario",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"funcionario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todos funcionarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/funcionario",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"funcionario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Convidado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"funcionarioId\": \"66d81215-995f-4cd5-9e9b-430aa2ec213d\",\r\n  \"nome\": \"convidado - Mãe teste\",\r\n  \"email\": \"convidado@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/convidado",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"convidado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca todos convidados",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/convidado",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"convidado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"descricao\": \"Churas de agosto\",\r\n  \"data\": \"2022-08-12\",\r\n  \"custoComida\": 0,\r\n  \"custoBebida\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/evento",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter todos Eventos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar participante do evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"participanteId\": \"cd00cd05-525b-4718-893b-b14b86bf6620\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/evento/participante/cancelamento",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"participante",
+						"cancelamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inseriri participante no evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"eventoId\": \"4370ecf1-59ed-4e39-8320-a2d47c00d1ca\",\r\n  \"funionarioId\": \"66d81215-995f-4cd5-9e9b-430aa2ec213d\",\r\n  \"convidadoId\": \"e5e9684d-52cf-481f-9210-0683c77bfd8b\",\r\n  \"valorComida\":20,\r\n  \"valorBebida\": 20,\r\n  \"funcioanrioComBebida\": true,\r\n  \"convidadoComBebida\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/evento/participante",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"participante"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Convidados do Evento ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212/convidado",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212",
+						"convidado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obter Detalhes do Evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Arecadação do evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212/arrecadacao",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212",
+						"arrecadacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar convidado do evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"participanteId\": \"ebcef97f-7f67-4d55-82e8-7d340c1edb21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/evento/convidado/cancelamento",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"convidado",
+						"cancelamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter participantes do evento ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212/participante",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212",
+						"participante"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Custo do evento",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212/custo",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212",
+						"custo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Custo Bebida ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212/custo/bebida",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212",
+						"custo",
+						"bebida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Custo Comida",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/evento/95321295-7909-43bd-87bd-e82bf9dcc212/custo/comida",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"evento",
+						"95321295-7909-43bd-87bd-e82bf9dcc212",
+						"custo",
+						"comida"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
